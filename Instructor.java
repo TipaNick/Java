@@ -46,11 +46,11 @@ public class Instructor {
 	}
 
 	public void printAll(){
-		System.out.print("Name: " + this.fio + ", Age: " + this.age + ", Phone: " + this.phone + ", Email: " + this.email + ", Expirience: " + exp + "\n");
+		System.out.print("Name: " + this.fio + ", Age: " + this.age + ", Phone: " 
+			+ this.phone + ", Email: " + this.email + ", Expirience: " + exp + "\n");
 	}
 
 	public void lvlUp(int num) {
 		this.exp += num;
 	}
-
 }

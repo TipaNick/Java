@@ -1,18 +1,19 @@
 import java.util.Scanner;
 public class Kursant {
-
-	String fio;
-	int age;
-	String phone;
-	String email;
-	String category;
+	static int count = 0;
+	String fio = "123";
+	int age = -1;
+	String phone = "123";
+	String email = "123";
+	String category = "123";
 
 	public Kursant(){
-		this.fio = "not empty";
-		this.age = 0;
-		this.phone = "not empty";
-		this.email = "not empty";
-		this.category = "not empty";
+		// this.fio = "not empty";
+		// this.age = 0;
+		// this.phone = "not empty";
+		// this.email = "not empty";
+		// this.category = "not empty";
+		count++;
 	}
 
 	public Kursant(String fio, int age, String phone, String email, String category){
@@ -21,11 +22,12 @@ public class Kursant {
 		this.phone = phone;
 		this.email = email;
 		this.category = category;
+		count++;
 	}
 
 	public void input(){
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Your name: ");
+		System.out.print("Ваше имя: ");
 		this.fio = scanner.nextLine();
 		System.out.print("Your age: ");
 		this.age = scanner.nextInt();
@@ -46,11 +48,15 @@ public class Kursant {
 	}
 
 	public void printAll(){
-		System.out.print("Name: " + this.fio + ", Age: " + this.age + ", Phone: " + this.phone + ", Email: " + this.email + ", Category: " + category + "\n");
+		System.out.print("Name: " + this.fio + ", Age: " + this.age + ", Phone: " + this.phone 
+			+ ", Email: " + this.email + ", Category: " + category + "\n");
 	}
 
 	public void lvlUp(int num) {
 		this.age += num;
 	}
 
+	static public void print_count(){
+		System.out.print("Кол-во студентов: " + count);
+	}
 }

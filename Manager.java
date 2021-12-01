@@ -34,11 +34,11 @@ public class Manager {
 	}
 
 	public void printAll(){
-		System.out.print("Name: " + this.fio + ", Age: " + this.age + ", Phone: " + this.phone + "\n");
+		System.out.print("Name: " + this.fio + ", Age: " 
+			+ this.age + ", Phone: " + this.phone + "\n");
 	}
 
 	public void lvlUp(int num) {
 		this.age += num;
 	}
-
 }
