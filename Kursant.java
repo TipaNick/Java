@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Kursant {
 	static int count = 0;
@@ -8,11 +9,6 @@ public class Kursant {
 	String category = "123";
 
 	public Kursant(){
-		// this.fio = "not empty";
-		// this.age = 0;
-		// this.phone = "not empty";
-		// this.email = "not empty";
-		// this.category = "not empty";
 		count++;
 	}
 
@@ -30,7 +26,12 @@ public class Kursant {
 		System.out.print("Ваше имя: ");
 		this.fio = scanner.nextLine();
 		System.out.print("Your age: ");
-		this.age = scanner.nextInt();
+		try {
+			this.age = scanner.nextInt();
+		} catch (InputMismatchException e){
+			this.age = -1;
+			System.out.print("Ошибка ввода\n");
+		}
 		
 		System.out.print("Your phone: ");
 		this.phone = scanner.nextLine();
@@ -57,6 +58,6 @@ public class Kursant {
 	}
 
 	static public void print_count(){
-		System.out.print("Кол-во студентов: " + count);
+		System.out.print("Кол-во студентов: " + count + "\n");
 	}
 }

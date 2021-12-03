@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 public class Instructor {
 
@@ -29,7 +30,15 @@ public class Instructor {
 		this.fio = scanner.nextLine();
 		System.out.print("Your age: ");
 		this.age = scanner.nextInt();
-		
+
+		if (this.age < 18) {
+			try {
+				throw new IOException("Возраст не может быть меньше 18");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
 		System.out.print("Your phone: ");
 		this.phone = scanner.nextLine();
 		scanner.nextLine();
